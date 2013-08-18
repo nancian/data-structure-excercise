@@ -8,7 +8,7 @@ The number of ways decoding "12" is 2.
  * 
  * bad solution: need more polish
  */
-public class decodeWays {
+public class DecodeWays {
     public int numDecodings(String s) {
         
         if (s == null || s.length() == 0)
