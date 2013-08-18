@@ -1,13 +1,16 @@
 /**
  *  Given a string S and a string T, count the number of distinct subsequences of T in S.
 
-A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, "ACE" is a subsequence of "ABCDE" while "AEC" is not).
+ *  A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, "ACE" is a subsequence of "ABCDE" while "AEC" is not).
 
-Here is an example:
-S = "rabbbit", T = "rabbit"
+ * Here is an example:
+ * S = "rabbbit", T = "rabbit"
 
-Return 3.
-*******************************
+ * Return 3.
+ */
+ 
+ public class Distinct {
+ /*
  * best efficient: loops + dp
  * example: aab ab
  *       a  b
@@ -15,9 +18,8 @@ Return 3.
  *  a |  1  - 
  *  a |  2  0
  *  b |  2  2
- * public class Solution {  
-        public int numDistinct(String S, String T) {  
-              
+ */
+        public int numDistinct1(String S, String T) {  
             int l=S.length(),m=T.length();  
             if(m==0||l==0) return 0;  
             int dp[][]=new int[l][m];
@@ -41,17 +43,14 @@ Return 3.
 
         }  
     }  
- * 
- * 
- * 
- * @author QIAN
- * more efficient solution: 2-D array + recursion
+ /* 
+ * second efficient solution: 2-D array + recursion
  * DP: let F(i, j) denote the number of ways for S[0]…S[i] contain T[0]..T[j], Then F(n-1, m-1) is our answer and we have
  * if(S[i] != T[j])  F(i, j) = F(i-1, j);
  * if(S[i] == T[j]) F(i, j) = F(i-1, j-1) + F(i-1, j);
  */
-public class Distinct {
-   public static int numDistinct(String S, String T) {
+
+   public static int numDistinct1(String S, String T) {
        int[][] mat = new int[S.length()][T.length()];
         if (S.length() == 0 || T.length() == 0)
             return 0;
