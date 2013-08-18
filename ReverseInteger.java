@@ -1,5 +1,9 @@
 /*
- * reverse a integer:
+Reverse digits of an integer.
+
+Example1: x = 123, return 321
+Example2: x = -123, return -321
+
  * should consider overflow of integer(not considered in following answer), and negative numbers
  */
 
